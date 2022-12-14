@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Weather_App</title>
+    <link rel="shortcut icon" href="https://goldentroutwilderness.files.wordpress.com/2012/01/various-weather.jpg" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div id="container">
+
+    <fieldset id="one">
+        <h1>Weather App</h1>
+        <!-- <form action="/" method="get">            
+            <input name="zode" type="text" class="form-control" placeholder="Enter a your name" required>
+            <button type="submit" class="btn btn-outline-primary">Get City name</button>
+        </form> -->
+
+        <form action="/" method="post">
+            <input name="city" type="text" class="form-control" placeholder="Enter a special municipality in Taiwan (lowercase)" required>   
+            <input name="username" type="text" class="form-control" placeholder="Enter a your name" required>         
+            <button type="submit" class="btn btn-outline-primary">Get Weather</button>            
+        </form>
+
+        
+        <% if(weather !== null){ %>
+            <% if(name !== null && name !== "[object Object]"){ %>
+                <p>Hi <%= name %>!</p>         
+            <% } %>
+            <p><%= weather %></p>         
+        <% } %>        
+        
+		<% if(error !== null){ %>
+              <p><%= error %></p>
+        <% } %>
+        
+        
+    </fieldset>
+
+
+</div>
+</body>
+</html>
